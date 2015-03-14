@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE struts PUBLIC
+        "-//Apache Software Foundation//DTD Struts Configuration 2.0//EN"
+        "http://struts.apache.org/dtds/struts-2.0.dtd">
+
+<struts>
+
+	<package name="study" namespace="/study" extends="json-default">
+
+		<action name="HelloWorld" class="cn.clxy.study.struts2.action.HelloWorld">
+			<result>/study/HelloWorld.jsp</result>
+		</action>
+
+		<action name="Test" class="testAction" method="getTypeList">
+			<result type="json">
+				<param name="root">articleTypeList</param>
+			</result>
+		</action>
+
+		<action name="Login_*" method="{1}"
+			class="cn.clxy.study.struts2.action.Login">
+			<result name="input">/study/Login.jsp</result>
+			<result type="redirectAction">Menu</result>
+		</action>
+
+		<!-- Add actions here -->
+	</package>
+</struts>

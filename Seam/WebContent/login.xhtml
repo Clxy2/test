@@ -1,0 +1,55 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml"
+	  xmlns:ui="http://java.sun.com/jsf/facelets"
+	  xmlns:h="http://java.sun.com/jsf/html"
+	  xmlns:f="http://java.sun.com/jsf/core"
+      xmlns:s="http://jboss.com/products/seam/taglib">
+<head>
+	<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+	<title>clxy tools @seam</title>
+	<link href="css/screen.css" rel="stylesheet" type="text/css" />
+</head>
+<body id="pgHome">
+<f:view>
+<table  style="vertical-align: middle;height:100%">
+<tr><td>
+<table>
+	<tr><th><img src="" alt="dog cat logo" /></th><th>Clxy Tools</th></tr>
+	<tr><td>&nbsp;</td><td>Some tools powered by Clxy.</td></tr>
+</table>
+<table border="0" style="border-collapse: collapse">
+	<tr>
+		<td width="280">
+		Created with JBoss Seam, Facelets.
+		</td>
+		<td style="border:1px solid green; border-width: 0px 0px 0px 1px" width="20">&nbsp;</td>
+		<td width="300" style="border-width:0px">
+            <h:form id="login">
+			<table>
+				<tr>
+					<td><label jsfc="h:outputLabel" id="UsernameLabel" for="username">Login Name</label></td>
+					<td><input jsfc="h:inputText" id="username" value="#{identity.username}" style="width: 175px;"/></td>
+				</tr>
+				<tr class="errors"><td colspan="2"><h:message id="message" for="username"/></td></tr>
+				<tr>
+					<td><label jsfc="h:outputLabel" id="PasswordLabel" for="password">Password</label></td>
+					<td><input jsfc="h:inputSecret" id="password" value="#{identity.password}" style="width: 175px;"/></td>
+				</tr>
+				<tr class="errors"><td colspan="2"><h:messages id="messages" globalOnly="true"/></td></tr>
+				<tr>
+					<td><label jsfc="h:outputLabel"  id="RememberLabel" for="remember">Remember</label></td>
+					<td><input type="checkbox" jsfc="h:selectBooleanCheckbox" id="remember" value="#{identity.rememberMe}" /></td>
+				</tr>
+				<tr><td colspan="2" align="center"><input type="button" jsfc="h:commandButton" id="login" action="#{identity.login}" value="Account Login"/></td></tr>
+				<tr><td colspan="2" align="center"><s:link id="register" view="/register.xhtml" value="Register New User"/></td></tr>
+			</table>
+            </h:form>
+		</td>
+	</tr>
+</table>
+</td>
+</tr>
+</table>
+</f:view>
+</body>
+</html>
